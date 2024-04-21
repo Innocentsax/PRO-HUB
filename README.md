@@ -3,9 +3,9 @@ Java & SpringBoot-powered Project Management System. Streamline your projects wi
 
 ## PROJECT: Step by Step.
 - Create SignUp, login api
-- Spring Security configration
+- Spring Security configuration
 - Custom user login
 - User model
 - User repository
-- JWT configration
+- JWT configuration
 - Project API
