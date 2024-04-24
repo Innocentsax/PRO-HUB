@@ -9,3 +9,18 @@ Java & SpringBoot-powered Project Management System. Streamline your projects wi
 - User repository
 - JWT configuration
 - Project API
+
+## KEY FEATURES.
+
+- Chat feat
+- Notification
+- Tasks Creation
+- Membership plan
+- Subscription plan
+- Email Services
+- Commenting on task
+- Project Creation
+- Payment Plan
+
+
+### Follow 🎯, Like 👍 and Star ⭐️ my project for more Amazing features
