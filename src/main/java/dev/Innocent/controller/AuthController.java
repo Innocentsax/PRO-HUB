@@ -3,6 +3,7 @@ package dev.Innocent.controller;
 import dev.Innocent.DTO.request.LoginRequest;
 import dev.Innocent.DTO.response.AuthResponse;
 import dev.Innocent.Service.Impl.CustomUserDetailsImpl;
+import dev.Innocent.Service.SubscriptionService;
 import dev.Innocent.config.JwtProvider;
 import dev.Innocent.model.User;
 import dev.Innocent.repository.UserRepository;
@@ -26,14 +27,18 @@ public class AuthController {
     private UserRepository userRepository;
     private PasswordEncoder passwordEncoder;
     private CustomUserDetailsImpl customUserDetails;
+    private SubscriptionService subscriptionService;
 
     @Autowired
     public AuthController(UserRepository userRepository, PasswordEncoder passwordEncoder,
-                          CustomUserDetailsImpl customUserDetails) {
+                          CustomUserDetailsImpl customUserDetails,
+                          SubscriptionService subscriptionService) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.customUserDetails = customUserDetails;
+        this.subscriptionService = subscriptionService;
     }
+
     @PostMapping("/signup")
     public ResponseEntity<AuthResponse> createUserHandler(@RequestBody User user) throws Exception {
         User isUserExist = userRepository.findByEmail(user.getEmail());
@@ -48,6 +53,9 @@ public class AuthController {
         createUser.setFullName(user.getFullName());
 
         User savedUser = userRepository.save(createUser);
+
+        // Add Subscription plan
+        subscriptionService.createSubscription(savedUser);
 
         // Generate Token
         Authentication authentication = new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword());
