@@ -93,6 +93,6 @@ public class AuthController {
         if(!passwordEncoder.matches(password, userDetails.getPassword())){
             throw new BadCredentialsException("Invalid username....");
         }
-        return new UsernamePasswordAuthenticationToken(null, userDetails.getAuthorities());
+        return new UsernamePasswordAuthenticationToken(userDetails,null, userDetails.getAuthorities());
     }
 }
