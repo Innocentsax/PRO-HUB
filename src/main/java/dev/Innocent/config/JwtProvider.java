@@ -20,8 +20,11 @@ public class JwtProvider {
                 .compact();
     }
     public static String getEmailFromToken(String jwt){
-        Claims claims = Jwts.parserBuilder().setSigningKey(key).build()
-                .parseClaimsJws(jwt).getBody();
-        return String.valueOf(claims.get("email"));
+        jwt = jwt.substring(7);
+        Claims claims = Jwts.parserBuilder().setSigningKey(key)
+                .build().parseClaimsJws(jwt).getBody();
+
+        String email = String.valueOf(claims.get("email"));
+        return email;
     }
 }
