@@ -37,7 +37,8 @@ public class ProjectServiceImpl implements ProjectService {
         createdProject.setTag(project.getTag());
         createdProject.setName(project.getName());
         createdProject.setCategory(project.getCategory());
-        createdProject.getTeam().add(user);
+        createdProject.setDescription(project.getDescription());
+//        createdProject.getTeam().add(user);
 
         Project savedProject = projectRepository.save(createdProject);
 
