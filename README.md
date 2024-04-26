@@ -17,7 +17,7 @@ Java & SpringBoot-powered Project Management System. Streamline your projects wi
 - Tasks Creation
 - Membership plan
 - Subscription plan
-- Email Services
+- Email Services (JMS)
 - Commenting on task
 - Project Creation
 - Payment Plan
