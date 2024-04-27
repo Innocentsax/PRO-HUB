@@ -11,6 +11,7 @@ Java & SpringBoot-powered Project Management System. Streamline your projects wi
 - Project API
 - Dry code
 - Loose coupling
+- Monolith Architecture
 
 ## KEY FEATURES.
 
