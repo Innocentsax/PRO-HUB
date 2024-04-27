@@ -10,6 +10,7 @@ Java & SpringBoot-powered Project Management System. Streamline your projects wi
 - JWT configuration
 - Project API
 - Dry code
+- Loose coupling
 
 ## KEY FEATURES.
 
