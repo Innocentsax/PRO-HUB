@@ -96,7 +96,7 @@ public class ProjectController {
     }
 
     @PostMapping("/invite")
-    public ResponseEntity<MessageResponse> createProject(
+    public ResponseEntity<MessageResponse> inviteToProject(
             @RequestBody InviteRequest req,
             @RequestHeader("Authorization") String jwt) throws Exception {
         User user = userService.findUserProfileByJwt(jwt);
